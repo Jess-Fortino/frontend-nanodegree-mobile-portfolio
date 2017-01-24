@@ -1,0 +1,31 @@
+{
+  "name": "frontend-optimization",
+  "version": "1.0.0",
+  "description": "minifying html",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jess-Fortino/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "keywords": [
+    "html",
+    "minify",
+    "uglify"
+  ],
+  "author": "Jess Fortino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jess-Fortino/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/Jess-Fortino/frontend-nanodegree-mobile-portfolio#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compress": "^1.4.1",
+    "grunt-contrib-htmlmin": "^2.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
