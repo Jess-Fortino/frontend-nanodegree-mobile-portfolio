@@ -19,7 +19,7 @@ module.exports = function(grunt){
 watch:{
   html:{
     files: ['index.html', 'project-2048.html', 'project-mobile.html', 'project-webperf.html'],
-    tasks: ['htmlmin', 'compress', 'uglify']
+    tasks: ['htmlmin', 'compress']
   }
 },
 
@@ -43,8 +43,36 @@ compress: {
       ext: '.gz.js'
     }]
   }
+},
+cssmin: {
+  target: {
+    files: [{
+      expand: true,
+      cwd: 'css/',
+      src: ['css/style.css'],
+      dest: 'dist/',
+      ext: '.min.css'
+    }]
+  }
+},
+  penthouse: {
+    extract : {
+        outfile : 'dist/css/out.css',
+        css : 'dist/css/style.css',
+        url : 'dist/index.html',
+        width : 1300,
+        height : 900,
+        skipErrors : false // this is the default
+    }
+  },
+  uglify: {
+  my_target: {
+    files: {
+      'dist/views/js/main.min.js': ['views/js/main.js'],
+      'dist/js/perfmatters.min.js': ['js/perfmatters.js']
+    }
+  }
 }
-
 
 
 });
@@ -54,5 +82,8 @@ grunt.registerTask('default', ['htmlmin']);
 grunt.loadNpmTasks('grunt-contrib-htmlmin');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-compress');
+grunt.loadNpmTasks('grunt-contrib-cssmin');
+grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-penthouse');
 //grunt.loadNpmTasks('grunt-contrib-uglify');
 }
