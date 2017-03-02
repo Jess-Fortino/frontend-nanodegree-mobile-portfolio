@@ -48,8 +48,8 @@ cssmin: {
   target: {
     files: [{
       expand: true,
-      cwd: 'css/',
-      src: ['css/style.css'],
+      cwd: 'dist/',
+      src: ['css/out.css'],
       dest: 'dist/',
       ext: '.min.css'
     }]
@@ -58,8 +58,8 @@ cssmin: {
   penthouse: {
     extract : {
         outfile : 'dist/css/out.css',
-        css : 'dist/css/style.css',
-        url : 'dist/index.html',
+        css : 'css/style.css',
+        url : 'index.html',
         width : 1300,
         height : 900,
         skipErrors : false // this is the default
