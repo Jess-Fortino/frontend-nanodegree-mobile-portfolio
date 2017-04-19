@@ -8,31 +8,28 @@ To get started, check out the repository and inspect the code.
 
 ####Part 1: Optimize PageSpeed Insights score for index.html
 
-Some useful tips to help you get started:
-
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
-
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
-
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
-
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+1.) The biggest optimization issue was the images. Using grunt, I compressed each image - additionally using TinyPng
+2.) JavaScript files/code within the HTML and print.css files needed to become async/print as they were not important for initial page load.
+3.) WebFont loading was impeding proper process. Commented out.
+4.) CSS could be inlined, save an extra fetch from the server. I used the cssmin gruntfile/node to create an additional
+file that gave me a minified version of inline CSS-- applied to index.html in the head.
+5.) HTML needed to be minified -- used gruntfile/node htmlmin to minify all HTML files within this project.
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+1.) Changed querySelector to getElementById in several places-- meaning the code looks for a more specific item and doesn't have to loop through unnecessary things.
+2.) The variable "movingPizzas" needed to be declared outside of the loop to avoid the DOM from being called on each iteration.
+3.) The variable "items" should be global so there is not an extra step to fetch position of the pizzas.
+4.) Math to scroll was simplified
+5.) Slider was updated with significantly less passing and recalculating
+6.) Saving randomPizzas.length outside of the function allows the loop to run without taking the extra step of checking the length of randomPizzas over and over again
+7.) Placing position of screen in constArray allows the for loop to push information without having the loop run constantly.
+8.) Images placed inside pizza.html are compressed and have two different sizes for two different placements.
+
+
+
+
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 

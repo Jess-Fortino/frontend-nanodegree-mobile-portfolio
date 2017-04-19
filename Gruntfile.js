@@ -87,5 +87,4 @@ grunt.loadNpmTasks('grunt-contrib-compress');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-penthouse');
-grunt.loadNpmTasks('grunt-contrib-uglify');
 }
