@@ -51,7 +51,7 @@ cssmin: {
     files: [{
       expand: true,
       cwd: 'dist/',
-      src: ['css/out.css'],
+      src: ['views/css/style.css'],
       dest: 'dist/',
       ext: '.min.css'
     }]
@@ -59,8 +59,8 @@ cssmin: {
 },
   penthouse: {
     extract : {
-        outfile : 'dist/css/out.css',
-        css : 'css/style.css',
+        outfile : 'dist/views/css/out.css',
+        css : 'views/css/style.css',
         url : 'index.html',
         width : 1300,
         height : 900,

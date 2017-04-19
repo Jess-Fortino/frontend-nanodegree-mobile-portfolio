@@ -11,8 +11,8 @@ To get started, check out the repository and inspect the code.
 1.) The biggest optimization issue was the images. Using grunt, I compressed each image - additionally using TinyPng
 2.) JavaScript files/code within the HTML and print.css files needed to become async/print as they were not important for initial page load.
 3.) WebFont loading was impeding proper process. Commented out.
-4.) CSS could be inlined, save an extra fetch from the server. I used the cssmin gruntfile/node to create an additional
-file that gave me a minified version of inline CSS-- applied to index.html in the head.
+4.) CSS could be inlined, save an extra fetch from the server. I used the penthouse gruntfile/node to create an additional
+file that gave me a minified version of inline CSS-- applied to index.html in the head element.
 5.) HTML needed to be minified -- used gruntfile/node htmlmin to minify all HTML files within this project.
 
 ####Part 2: Optimize Frames per Second in pizza.html
