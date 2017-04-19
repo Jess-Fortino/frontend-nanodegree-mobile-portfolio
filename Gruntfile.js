@@ -11,7 +11,9 @@ module.exports = function(grunt){
       'dist/index.html': 'index.html',
       'dist/project-2048.html':'project-2048.html',
       'dist/project-mobile.html':'project-mobile.html',
-      'dist/project-webperf.html':'project-webperf.html'// 'destination': 'source'
+      'dist/project-webperf.html':'project-webperf.html',
+      'dist/views/pizza.html':'views/pizza.html'
+      // 'destination': 'source'
     }
   }
 },
@@ -85,5 +87,5 @@ grunt.loadNpmTasks('grunt-contrib-compress');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-penthouse');
-//grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-uglify');
 }
